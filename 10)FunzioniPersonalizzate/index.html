@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le funzioni personalizzte</title>
+    <style>
+        button {
+            background-color: #4CAF50; /* Colore di sfondo */
+            color: white; /* Colore del testo */
+            padding: 10px 20px; /* Spaziatura interna */
+            border: none; /* Nessun bordo */
+            border-radius: 4px; /* Bordo arrotondato */
+            cursor: pointer; /* Cambia il cursore del mouse al passaggio sopra al bottone */
+        }
+
+        /* Stili per il titolo h1 */
+        h1 {
+            font-size: 36px; /* Dimensione del testo */
+            color: #333; /* Colore del testo */
+            margin-bottom: 20px; /* Margine inferiore */
+        }
+        input[type="text"] {
+            padding: 10px; /* Spaziatura interna */
+            border: 1px solid #ccc; /* Bordo con colore grigio chiaro */
+            border-radius: 4px; /* Bordo arrotondato */
+            font-size: 16px; /* Dimensione del testo */
+            color: #333; /* Colore del testo */
+            width: 100%; /* Larghezza del campo di testo */
+            box-sizing: border-box; /* Includi il bordo e il padding nella larghezza totale */
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Inserisci nome">
+    <button>Saluta</button>
+    <h1>Nessun saluto</h1>
+    <script>
+        
+        let button=document.querySelector('button');
+        let title=document.querySelector('h1');
+        button.addEventListener('click',saluta);
+
+        function saluta(){
+            let nome=document.querySelector('input');
+            title.innerHTML="Ciao " + nome.value;
+        }
+    </script>
+
+
+    <!--
+        Questo codice HTML e JavaScript definisce una semplice pagina web che consente all'utente di inserire 
+        il proprio nome e poi premere un pulsante per visualizzare un saluto personalizzato. 
+        Ecco una spiegazione più dettagliata del codice:
+
+        La prima riga definisce un campo di input 
+        di tipo testo con un segnaposto "Inserisci nome".
+
+        La seconda riga definisce un pulsante con l'etichetta "Saluta".
+
+        La terza riga definisce un'intestazione di primo livello (h1) con il testo "Nessun saluto".
+
+        Le righe seguenti definiscono uno script JavaScript che aggiunge un 
+        gestore di eventi al pulsante "Saluta" e definisce la funzione "saluta".
+
+        La prima riga dello script seleziona il pulsante e lo memorizza nella variabile "button".
+
+        La seconda riga dello script seleziona l'intestazione e la memorizza nella variabile "title".
+
+        La terza riga dello script aggiunge un ascoltatore di eventi al pulsante "Saluta". 
+        Quando l'utente fa clic sul pulsante, viene eseguita la funzione "saluta".
+
+        La funzione "saluta" seleziona il campo di input dell'utente, memorizza il valore 
+        inserito nella variabile "nome", e quindi aggiorna il testo dell'intestazione con un messaggio di 
+        saluto personalizzato che include il nome dell'utente. Il nuovo testo dell'intestazione viene impostato utilizzando il metodo innerHTML.
+
+        In sintesi, quando l'utente inserisce il proprio nome nel campo di input e preme il pulsante "Saluta", 
+        viene visualizzato un messaggio di saluto personalizzato nella pagina web.
+    -->
+</body>
+</html>
