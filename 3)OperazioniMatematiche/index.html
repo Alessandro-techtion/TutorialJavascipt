@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operazioni matematiche</title>
+</head>
+<body>
+    <!--
+        1)Tipi di numeri: interi,float,double,binary,octal,esadecimali
+
+        2)Metodo ToFixed()
+
+        3)Convertire un numero Number()
+
+        4)Operatori + - * / % **
+
+        5)Operatori di comparazioni > < >= <= == === !
+    -->
+    <script>
+        let a = 10;
+        let b = -5;
+        let c = 0;
+
+        //Float
+        let d = 3.14;
+        let e = -0.001;
+        let f = 1.23e-6;
+
+        const numero=3.234142324223;
+        console.log(numero.toFixed(2));
+        /*
+            La funzione "toFixed" viene chiamata su questo numero con l'argomento "2". 
+            La funzione "toFixed" restituisce una stringa rappresentante il numero con un numero 
+            specificato di cifre decimali, in questo caso 2.
+
+            Quindi, quando si esegue questo codice, viene stampata la stringa "3.23" 
+            sulla console, poiché è stato arrotondato il numero originale a 2 cifre decimali.
+        */
+
+        console.log(typeof numero);
+        /*
+            La funzione console.log() in questo codice JavaScript viene utilizzata 
+            per stampare il tipo di dati della variabile "numero".
+
+            Il risultato che verrà stampato sulla console dipende dal valore 
+            assegnato alla variabile "numero".
+
+            Se il valore assegnato fosse un numero intero, il risultato sarebbe "number"
+        */
+
+        numero1='31';
+        numero2=1;
+        somma=numero1+numero2;
+        console.log(somma)
+        /*
+            In questo codice JavaScript, la variabile "numero1" viene inizializzata con una stringa "31" 
+            e la variabile "numero2" con un valore numerico intero di 1.
+
+            Successivamente, viene dichiarata una costante "somma" che tenta di sommare queste due variabili 
+            utilizzando l'operatore di addizione "+". Tuttavia, poiché "numero1" è una stringa, 
+            l'operatore di addizione viene interpretato come operatore di concatenazione, che unisce le due stringhe.
+
+            Quindi, il valore assegnato alla costante "somma" non è la somma matematica di 31 e 1, 
+            ma piuttosto la stringa "311". Questo valore viene quindi stampato sulla console utilizzando 
+            la funzione console.log():
+        */
+        console.log(Number(numero1)+numero2);
+        /*
+            Poiché la funzione Number() converte la stringa "31" in un numero, 
+            l'operatore di addizione viene interpretato come operazione matematica e il 
+            risultato corretto della somma di 31 e 1, che è 32, viene restituito e stampato sulla console.
+        */
+
+        resto=32%2;//Stamperà 0 se la divisione non ha resto
+
+
+        numero1=10;
+        numero2=20;
+        console.log(numero1===numero2);
+        numero1='10';
+        numero2=20;
+        console.log(numero1===numero2);
+        /*
+            In questo codice JavaScript, viene prima assegnato il valore numerico intero 10 alla variabile 
+            "numero1" e il valore numerico intero 20 alla variabile "numero2".
+
+            Viene quindi utilizzato l'operatore di uguaglianza "===" per confrontare se il valore di 
+            "numero1" è uguale al valore di "numero2". Poiché questi valori sono diversi, il risultato del primo 
+            console.log() sarà "false".
+
+            Successivamente, viene assegnata la stringa "10" alla variabile "numero1" e il valore numerico 
+            intero 20 alla variabile "numero2". Viene ancora una volta utilizzato l'operatore di 
+            uguaglianza "===" per confrontare se il valore di "numero1" è uguale al valore di "numero2".
+
+            In questo caso, poiché l'operatore di uguaglianza "===" confronta anche il tipo di dati, 
+            il risultato del secondo console.log() sarà "false", in quanto la variabile "numero1" 
+            è una stringa e la variabile "numero2" è un numero.
+        */
+    </script>
+</body>
+</html>
