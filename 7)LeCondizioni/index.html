@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Condizioni</title>
+</head>
+<body>
+    <!--
+        1)Cosa sono le condizioni
+            In JavaScript, l'istruzione if viene utilizzata per eseguire un blocco di 
+            codice se una condizione specificata è vera.
+
+            L'istruzione if è seguita da una condizione racchiusa tra 
+            parentesi tonde, come ad esempio:
+
+        2)If Statement
+            if (condizione) {
+                // blocco di codice da eseguire se la condizione è vera
+            }
+
+        3)Else if
+            Se la condizione è valutata come true, il blocco di codice racchiuso tra
+            parentesi graffe {} viene eseguito. Se la condizione è valutata come false, 
+            il blocco di codice viene ignorato e l'esecuzione del programma continua 
+            dopo la parentesi graffa di chiusura }.
+
+            È possibile utilizzare l'istruzione if in combinazione con altre istruzioni
+            come else e else if per definire più condizioni. Ad esempio:
+            
+            if (condizione1) {
+                // blocco di codice da eseguire se la condizione1 è vera
+            } else if (condizione2) {
+                // blocco di codice da eseguire se la condizione1 è falsa e la condizione2 è vera
+            } else {
+                // blocco di codice da eseguire se tutte le condizioni sono false
+            }
+
+        4)Innestare gli if
+        5)Operatori logici
+        6)Lo Switch
+            Lo statement switch in JavaScript è un'altra forma di controllo di flusso che permette di 
+            eseguire del codice diverso in base al valore di una variabile o di un'espressione.
+
+            La sintassi di base dello switch in JavaScript è la seguente:
+            switch (valore) {
+                case valore1:
+                    // Codice da eseguire se valore === valore1
+                    break;
+                case valore2:
+                    // Codice da eseguire se valore === valore2
+                    break;
+                // altri casi
+                default:
+                    // Codice da eseguire se nessun caso corrisponde
+            }
+
+        7)Ternary operator
+            Il ternary operator in JavaScript è un operatore condizionale che permette
+            di eseguire un'istruzione if in modo compatto.
+
+            La sintassi del ternary operator è la seguente:
+            condizione ? espressione1 : espressione2
+    -->
+
+    <script>
+        if(20%2==0){
+            console.log("Il numero è pari")
+        }else{
+            console.log("Il numero è dispari");
+        }
+
+
+
+        let numero1=20;
+        let numero2=10;
+
+        if(numero1==20 && numero2==10){
+            console.log("La somma è 30");
+        }else{
+            console.log("La loro somma è diversa da 30");
+        }
+
+
+        //Lo Switch
+        let giorno = 2;
+        switch (giorno) {
+            case 1:
+                console.log("Lunedì");
+                break;
+            case 2:
+                console.log("Martedì");
+                break;
+            case 3:
+                console.log("Mercoledì");
+                break;
+            case 4:
+                console.log("Giovedì");
+                break;
+            case 5:
+                console.log("Venerdì");
+                break;
+            default:
+                console.log("Il valore inserito non corrisponde a nessun giorno della settimana");
+        }
+        /*
+            In questo esempio, la variabile giorno viene confrontata con i valori da 1 a 5 all'interno di 
+            uno statement switch. Se giorno è uguale a 1, viene stampato "Lunedì". Se giorno è uguale 
+            a 2, viene stampato "Martedì". E così via, fino a quando giorno viene confrontato con tutti 
+            i casi possibili. Se giorno non corrisponde a nessun caso, viene stampato il messaggio 
+            "Il valore inserito non corrisponde a nessun giorno della settimana".
+
+            Lo switch può essere utile quando si ha bisogno di eseguire del codice diverso in 
+            base al valore di una variabile o di un'espressione, ma può diventare difficile 
+            da gestire se ci sono molti casi da gestire.
+        */
+
+
+        let x = 10;
+        let risultato = x > 5 ? "x è maggiore di 5" : "x è minore o uguale a 5";
+        console.log(risultato);
+        /*
+            In questo esempio, la variabile x viene confrontata con il valore 5 
+            all'interno di un ternary operator. Se x è maggiore di 5, viene restituito 
+            il valore della prima espressione ("x è maggiore di 5"), altrimenti viene restituito 
+            il valore della seconda espressione ("x è minore o uguale a 5"). Il risultato viene 
+            quindi stampato sulla console.
+
+            Il ternary operator può essere utile quando si ha bisogno di eseguire un'istruzione if in 
+            modo compatto e veloce, ma può diventare difficile da leggere se la condizione e le 
+            espressioni sono complesse.
+        */
+    </script>
+</body>
+</html>

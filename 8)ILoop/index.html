@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I loop</title>
+</head>
+<body>
+    <!--
+        1)Introduzione ai loop?
+            In programmazione, i loop sono strumenti che consentono di eseguire ripetutamente 
+            una stessa sequenza di istruzioni finché una certa condizione è soddisfatta. 
+            In JavaScript, ci sono principalmente due tipi di loop: il ciclo for e il ciclo while.
+
+            Il ciclo for è usato per eseguire un'operazione un numero fisso di volte. 
+            La sintassi di base del ciclo for è la seguente:
+                for (inizializzazione; condizione; incremento/decremento) {
+                    // istruzioni da eseguire
+                }
+
+        2)Perchè servono i loop?
+        3)Loop for 
+        4)Uscire dai loop con break;
+        5)Saltare le iterazioni con continue
+        6)While e Do While
+            Il ciclo while è usato per eseguire un'operazione finché 
+            una certa condizione è soddisfatta. 
+            La sintassi di base del ciclo while è la seguente:
+            while (condizione) {
+                // istruzioni da eseguire
+            }
+-->
+    <script>
+
+        let arrayy=[23,1,43,209,48,61];
+        for(i=0;i<arrayy.length;i++){
+            console.log(arrayy[i]);
+        }
+        /*
+            Nel codice fornito, la variabile i viene inizializzata a 0 all'inizio del ciclo, 
+            e la condizione i < arrayy.length viene valutata ad ogni iterazione per determinare 
+            se il ciclo deve continuare. La condizione controlla se la variabile i è 
+            minore della lunghezza dell'array arrayy, in modo che il ciclo possa eseguire 
+            un'iterazione per ogni elemento dell'array. Alla fine di ogni iterazione, 
+            la variabile i viene incrementata di 1 usando l'operatore ++.
+
+            Dentro il corpo del ciclo for, l'istruzione console.log(arrayy[i]) stampa 
+            l'elemento corrente dell'array sulla console. L'indice corrente dell'array viene 
+            rappresentato dalla variabile i, che viene incrementata di 1 alla fine di ogni 
+            iterazione per accedere all'elemento successivo dell'array.
+
+            In questo modo, il ciclo for esegue un'iterazione per ogni elemento dell'array arrayy, 
+            stampando ciascun elemento sulla console.
+        */
+
+
+
+        let arrayDiCitta=['Parigi','Milano','Roma','Torino','Lecco','Londra'];
+        for(i=0;i<arrayDiCitta.length;i++){
+            if(arrayDiCitta[i]=='Torino'){
+                break;
+            }
+            console.log(arrayDiCitta[i]);
+        }
+
+        /*
+            Dentro il corpo del ciclo for, l'istruzione if(arrayDiCitta[i]=='Torino'){break;} controlla 
+            se l'elemento corrente dell'array è "Torino". Se è così, il ciclo viene interrotto usando 
+            l'istruzione break, in modo che non vengano stampati ulteriori elementi dell'array. 
+            Se l'elemento corrente non è "Torino", l'istruzione console.log(arrayy[i]) stampa l'elemento 
+            corrente dell'array sulla console.
+
+            In questo modo, il ciclo for esegue un'iterazione per ogni elemento dell'array 
+            arrayDiCitta, stampando ciascun elemento fino a quando non viene trovata la 
+            città di "Torino". Una volta che la città di "Torino" viene trovata, 
+            il ciclo viene interrotto e l'esecuzione continua con la prima .
+            istruzione dopo il ciclo.
+        */
+
+
+        
+        console.log("Secondo ciclo");
+
+        for(i=0;i<arrayDiCitta.length;i++){
+            if(arrayDiCitta[i]=='Milano'){
+                continue;
+            }
+            console.log(arrayDiCitta[i]);
+        }
+
+        /*
+            L'istruzione continue fa in modo che il ciclo passi alla successiva iterazione, saltando tutte le 
+            istruzioni successive all'istruzione continue all'interno del corpo del ciclo, fino alla fine 
+            dell'iterazione corrente.
+
+            In questo caso, se l'elemento corrente dell'array è "Milano", l'istruzione continue fa sì che 
+            il ciclo salta l'istruzione console.log(arrayy[i]) e passa alla successiva iterazione 
+            del ciclo, saltando l'elemento "Milano". Se l'elemento corrente non è "Milano", invece, 
+            l'istruzione console.log(arrayy[i]) stampa l'elemento corrente dell'array sulla console.
+
+            In questo modo, il secondo ciclo for esegue un'iterazione per ogni elemento 
+            dell'array arrayDiCitta, stampando ciascun elemento tranne "Milano".
+        */
+
+
+        //Ciclo While
+        /*
+            In JavaScript, il ciclo while e il ciclo do-while sono due alternative al ciclo 
+            for per eseguire una serie di istruzioni ripetutamente finché 
+            una certa condizione non viene soddisfatta.
+
+            Il ciclo while ha la seguente sintassi:
+
+            while (condizione) {
+                // istruzioni
+            }
+
+            Il ciclo esegue le istruzioni all'interno del blocco di codice fintanto che la condizione 
+            specificata tra parentesi tonde è valutata come true. Ad ogni iterazione del ciclo, la condizione 
+            viene valutata, e se è ancora true, le istruzioni vengono eseguite nuovamente. 
+            Quando la condizione diventa false, il ciclo termina e l'esecuzione passa alla prima 
+            istruzione successiva al blocco di codice.
+        */
+       i=0;
+            while (i < 5) {
+            console.log(i);
+            i++;
+        }
+
+        /*
+            do {
+                // istruzioni
+            } while (condizione);
+
+            Il ciclo esegue le istruzioni all'interno del blocco di codice almeno una volta, 
+            senza verificare la condizione specificata tra parentesi tonde. Dopo la prima esecuzione 
+            del blocco di codice, la condizione viene valutata. Se è ancora true, le istruzioni 
+            vengono eseguite nuovamente, altrimenti il ciclo termina e l'esecuzione passa alla 
+            prima istruzione successiva al blocco di codice.
+        */
+
+        i = 0;
+        do {
+            console.log(i);
+            i++;
+        } while (i < 5);
+
+    </script>
+</body>
+</html>
