@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gli eventi</title>
+    <style>
+        input{
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        Gli eventi in JavaScript sono azioni che si verificano nella pagina web, come un clic su un pulsante, 
+        la pressione di un tasto sulla tastiera o il caricamento della pagina. JavaScript consente di catturare questi 
+        eventi e definire come gestirli mediante la definizione di funzioni di gestione degli eventi.
+
+        Per esempio, per catturare l'evento di clic del mouse su un pulsante, si può utilizzare il metodo "addEventListener()" 
+        per aggiungere un gestore di eventi al pulsante:
+
+        var pulsante = document.querySelector('button');
+        pulsante.addEventListener('click', function() {
+            console.log('Hai cliccato il pulsante!');
+        });
+
+        In questo esempio, si seleziona il primo elemento di pulsante nel documento HTML tramite il metodo "querySelector()", 
+        quindi si aggiunge un gestore di eventi "click" al pulsante utilizzando il metodo "addEventListener()". 
+        Quando l'utente fa clic sul pulsante, il gestore di eventi viene attivato e la funzione anonima viene eseguita, 
+        stampando un messaggio sulla console del browser.
+
+        Esistono molti altri tipi di eventi in JavaScript, tra cui eventi di mouse, tastiera, form, 
+        caricamento della pagina, ecc. Ogni volta che si verifica uno di questi eventi, si può definire una funzione di 
+        gestione dell'evento per eseguire un'azione specifica. Questo consente di rendere le pagine web più interattive e 
+        dinamiche, migliorando l'esperienza dell'utente.  
+
+    -->
+
+    <form>
+        <div>
+            <label for="fname">Nome:</label>
+            <input id="fname" type="text">
+        </div>
+        <div>
+            <label for="lname">Cognome:</label>
+            <input id="lname" type="text" onfocus=saluta()>
+        </div>
+        <div>
+            <input id="submit" type="submit">
+        </div>
+    </form>
+    <p></p>
+
+    <script>
+        const form=document.querySelector('form');
+        const nome=document.getElementById('fname');
+        const cognome=document.getElementById('lname');  
+        const paragrafo=document.querySelector('p');
+
+        form.onsubmit=function (e){
+            if(nome.value=='' || cognome.value==''){
+                e.preventDefault();
+                paragrafo.textContent="Devi compilare entrambi i campi!";
+            }
+        }
+
+        nome.onfocus=function(){
+            console.log('Sono nel campo del nome');
+        }
+        nome.onclick=function(){
+            console.log('ciao');
+        }
+
+        function saluta(){
+            console.log('Ciao Luca')
+        }
+
+        cognome.addEventListener('focus',function(e){
+            console.log('Sono in focus dal listener');
+            console.log(e);
+        })
+
+
+
+        /*
+            preventDefault() è un metodo disponibile negli oggetti di tipo Event in JavaScript, e viene utilizzato per 
+            prevenire il comportamento predefinito di un evento. In altre parole, quando viene chiamato preventDefault() 
+            su un oggetto evento, viene impedito che l'azione predefinita associata a quell'evento venga eseguita.
+
+            Per esempio, supponiamo di avere un link che vogliamo gestire con un listener per eseguire un'azione personalizzata 
+            al posto del normale comportamento di aprire il link. In questo caso, possiamo utilizzare preventDefault() 
+            per impedire l'apertura del link:
+
+            const link = document.querySelector('#myLink');
+
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // impediamo l'apertura del link
+                console.log('Il link è stato cliccato!');
+            });
+
+            In questo caso, quando l'utente clicca sul link con id "myLink", viene eseguita la funzione passata come 
+            secondo argomento a addEventListener. All'interno di questa funzione, viene chiamato preventDefault() 
+            per impedire l'apertura del link e viene stampato un messaggio sulla console.
+
+            preventDefault() è un metodo utile per gestire gli eventi in modo personalizzato, ma va usato con attenzione, 
+            poiché impedisce il comportamento predefinito dell'evento e potrebbe causare problemi di usabilità per gli utenti.
+
+        */
+
+
+        /*
+            In JavaScript, l'Event Bubbling (o "bubbling degli eventi") si riferisce alla propagazione degli eventi 
+            attraverso la gerarchia degli elementi HTML, dal livello più interno (l'elemento che ha scatenato l'evento) 
+            fino al livello più esterno (l'elemento radice del documento).
+
+            Quando si verifica un evento su un elemento, come ad esempio un click su un bottone, l'evento viene propagato
+             verso l'alto nella gerarchia degli elementi fino a raggiungere l'elemento radice del documento. 
+             Durante questo processo, ogni elemento genitore dell'elemento che ha scatenato l'evento ha la possibilità di 
+             gestire l'evento prima che venga gestito dall'elemento successivo nella gerarchia.
+
+            Per esempio, supponiamo di avere una struttura HTML in cui un elemento <button> è contenuto all'interno di 
+            un elemento <div>. Se l'utente clicca sul bottone, verrà generato un evento di click sull'elemento <button> 
+            che verrà propagato al genitore <div> e poi al genitore di <div>, e così via fino all'elemento radice 
+            del documento.
+
+            <div id="outerDiv">
+                <div id="innerDiv">
+                    <button id="myButton">Clicca qui!</button>
+                </div>
+            </div>
+
+            const outerDiv = document.querySelector('#outerDiv');
+            const innerDiv = document.querySelector('#innerDiv');
+            const myButton = document.querySelector('#myButton');
+
+            outerDiv.addEventListener('click', function(event) {
+                console.log('Handler dell\'evento click per outerDiv');
+            });
+
+            innerDiv.addEventListener('click', function(event) {
+                console.log('Handler dell\'evento click per innerDiv');
+            });
+
+            myButton.addEventListener('click', function(event) {
+                console.log('Handler dell\'evento click per myButton');
+            });
+
+            In questo esempio, quando l'utente clicca sul bottone, verranno eseguiti in sequenza i listener degli eventi sul 
+            bottone stesso, sull'elemento <div> interno e sull'elemento <div> esterno, in quanto l'evento viene propagato 
+                attraverso la gerarchia degli elementi.
+
+            L'Event Bubbling è utile per creare gerarchie di gestori degli eventi e per evitare di dover associare listener 
+            a ogni singolo elemento della gerarchia. Tuttavia, in alcuni casi potrebbe essere necessario interrompere 
+            la propagazione degli eventi per evitare che venga eseguita una gestione non voluta degli eventi. 
+            Per fare questo si può utilizzare il metodo stopPropagation() sull'oggetto evento.
+        */
+    </script>
+</body>
+</html>

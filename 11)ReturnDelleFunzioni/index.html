@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il return delle funzioni</title>
+</head>
+<body>
+    <!--
+        In JavaScript, il return è un'istruzione che viene utilizzata all'interno di una 
+        funzione per restituire un valore. Quando una funzione restituisce un valore, questo valore 
+        può essere utilizzato successivamente dal codice che ha chiamato la funzione.
+
+        Ecco un esempio di come utilizzare il return all'interno di una funzione:
+    -->
+
+    <script>
+        function somma(a, b) {
+            return a + b;
+        }
+
+        let risultato = somma(2, 3);
+
+        console.log(risultato); // Output: 5
+
+        /*
+            In questo esempio, la funzione somma riceve due argomenti, a e b, e restituisce la somma dei 
+            due argomenti. La chiamata alla funzione somma con gli argomenti 2 e 3 restituisce il valore 5, 
+            che viene memorizzato nella variabile risultato. Questo valore viene quindi stampato sulla 
+            console utilizzando il metodo console.log().
+
+            È importante notare che il return non è obbligatorio all'interno di una funzione, 
+            ma se non viene utilizzato, la funzione non restituirà alcun valore. In questo caso, 
+            il valore restituito dalla funzione sarà undefined.
+        */
+    </script>
+</body>
+</html>
