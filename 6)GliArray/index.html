@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gli Array</title>
+</head>
+<body>
+    <!--
+        1)Cos'è un array
+            In JavaScript, un array è un oggetto che consente di memorizzare e accedere a più 
+            valori in una singola variabile.
+
+            Un array può contenere un elenco di valori di qualsiasi tipo di dato, come numeri, 
+            stringhe, booleani, oggetti o altri array. Gli elementi all'interno di un array sono ordinati 
+            in base al loro indice numerico, che inizia sempre da 0.
+
+        2)Creare un array
+        3)Accedere e modificare dati in un array
+        4)Lunghezza di un array e come passare in rassegna tutti gli elementi 
+        5)Convertire stringhe e array split() join()
+        6)Aggiungere elementi push(), pop(), unshift() shift()
+    -->
+
+    <script>
+        
+        let citta='Milano,Torino,Venezia,Lecco,Genova,Roma';//è una stringa!
+        
+        let numeri=[32,10,9,45,98,100,234];
+        console.log(numeri[numeri.length-1]);
+        /*
+            stampa l'ultimo elemento dell'array numeri.
+
+            In particolare, numeri.length restituisce la lunghezza dell'array numeri, che è 7 in questo caso. 
+            L'ultimo elemento dell'array ha un indice numerico che è uguale alla lunghezza dell'array meno 1, 
+            quindi l'ultimo elemento dell'array ha indice 6.
+
+            Pertanto, numeri[numeri.length-1] restituisce l'ultimo elemento 
+            dell'array numeri, ovvero 234, che viene quindi stampato nella console.
+
+            In sostanza, questo codice è un modo efficiente per ottenere l'ultimo elemento di un
+            array senza dover conoscere la sua lunghezza in anticipo o dover scorrere l'intero array.
+        */
+        
+        
+        numeri[2]=10000;//Cambiamo il valore all'indice 2 dell'array
+
+        
+        for(i=0;i<numeri.length;i++){
+            console.log(numeri[i]);
+        }
+        /*
+            itera attraverso gli elementi dell'array numeri e stampa ogni elemento nella console.
+
+            In particolare, il ciclo for utilizza una variabile i per rappresentare l'indice numerico 
+            di ogni elemento nell'array. Il ciclo for continua ad eseguire fintanto che l'indice i 
+            è minore della lunghezza dell'array numeri.
+
+            Ad ogni iterazione del ciclo, l'istruzione console.log(numeri[i]) viene eseguita, stampando 
+            l'elemento dell'array numeri corrispondente all'indice i nella console.
+
+            Pertanto, questo codice stampa tutti gli elementi dell'array numeri uno per uno nella console, 
+            in ordine dal primo all'ultimo.
+        */
+
+        
+        citta='Milano,Torino,Venezia,Lecco,Genova,Roma';
+        let cittaArray=citta.split(',');
+        console.log(cittaArray);
+        /*
+            converte la stringa citta in un array di stringhe utilizzando il metodo split() di JavaScript.
+
+            In particolare, il metodo split() viene chiamato sulla stringa citta con il separatore ',' 
+            come parametro. Ciò significa che la stringa viene suddivisa in un array di sottostringhe ogni 
+            volta che viene trovata la virgola. Il risultato è un array di stringhe 
+            con gli elementi separati dalla virgola:
+        */
+
+        
+        numeri=[32,10,9,45,98,100,234];
+        let stringaNumeri=numeri.join(',');
+        console.log(stringaNumeri);
+        /*
+            converte l'array di numeri numeri in una stringa utilizzando il metodo join() di JavaScript.
+
+            In particolare, il metodo join() viene chiamato sull'array numeri con il separatore ',' 
+            come parametro. Ciò significa che gli elementi dell'array vengono concatenati in una 
+            singola stringa, separati dalla virgola. Il risultato è una stringa con gli elementi 
+            dell'array separati dalla virgola
+        */
+
+
+        cittaArray.push("Cagliari");
+        console.log(cittaArray);
+
+        cittaArray.pop();
+        console.log(cittaArray);
+
+        cittaArray.unshift("Cagliari");
+        console.log(cittaArray);
+
+        cittaArray.shift();
+        console.log(cittaArray);
+
+        /*
+            modifica l'array cittaArray utilizzando i metodi push(), pop(), unshift() e shift() di JavaScript.
+
+            push("Cagliari") aggiunge la stringa "Cagliari" alla fine dell'array cittaArray 
+            utilizzando il metodo push().
+
+            pop() rimuove l'ultimo elemento dall'array cittaArray utilizzando il metodo pop().
+
+            unshift("Cagliari") aggiunge la stringa "Cagliari" all'inizio dell'array cittaArray 
+            utilizzando il metodo unshift().
+
+            shift() rimuove il primo elemento dall'array cittaArray utilizzando 
+            il metodo shift().
+
+            Pertanto, questo codice dimostra come i metodi push(), pop(), unshift() 
+            e shift() possono essere utilizzati per modificare gli elementi di un 
+            array in diverse posizioni. In particolare, push() e pop() aggiungono e 
+            rimuovono elementi dalla fine dell'array, mentre unshift() e shift() 
+            aggiungono e rimuovono elementi dall'inizio dell'array.
+        */
+    </script>
+</body>
+</html>

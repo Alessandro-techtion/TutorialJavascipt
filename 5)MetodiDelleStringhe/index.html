@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodi delle stringhe</title>
+</head>
+<body>
+    <!--
+        1)Una stringa è un oggetto
+        2)Lunghezza di una stringa
+        3)Prendere un carattere specifico
+        4)Prendere una parte di stringa: indexOf slice
+        5)Cambiare il Case di una stringa toUpperCase toLowerCase 
+        6)Cambiare parti di una stringa replace 
+    -->
+
+    <script>
+        let stringa="Questa è una stringa";
+        
+        console.log(`Lunghezza della stringa: ` + stringa.length);
+        /*
+            La funzione .length() è un metodo che viene utilizzato per ottenere la lunghezza 
+            di una stringa, di un array o di una qualsiasi collezione di dati in diversi linguaggi 
+            di programmazione come JavaScript, Python, Java e molti altri.
+        */
+
+        
+        console.log(`Carattere della stringa alla posizione 3: ` +stringa[3]);
+        /*
+            a funzione console.log(stringa[3]); stampa il quarto carattere della stringa stringa.
+
+            In molti linguaggi di programmazione, come JavaScript e Python, 
+            le stringhe sono trattate come un array di caratteri. Pertanto, ogni carattere in una stringa 
+            ha un indice numerico che inizia da 0.
+
+            In questo caso, stringa[3] seleziona il carattere nella posizione 3 
+            (cioè il quarto carattere, poiché l'indice inizia da 0) della stringa stringa 
+            e lo stampa nella console.
+        */
+
+        let indexOfUna=stringa.indexOf('una');
+        console.log(`Taglia una parte della stringa: ` + stringa.slice(indexOfUna));
+        /*
+            Il codice 
+            let indexOfUna=stringa.indexOf('una'); 
+            console.log(stringa.slice(indexOfUna)); 
+            cerca l'indice della prima occorrenza della sottostringa "una" nella stringa stringa 
+            e quindi stampa la sottostringa che inizia da quell'indice fino alla fine della stringa stringa.
+
+            In particolare, il metodo indexOf() cerca la posizione dell'inizio della sottostringa specificata 
+            all'interno della stringa, e restituisce l'indice della prima occorrenza trovata. 
+            Questo indice viene quindi salvato nella variabile indexOfUna.
+
+            Successivamente, il metodo slice() viene utilizzato per estrarre una 
+            sottostringa dalla stringa stringa. In questo caso, viene estratta una sottostringa che inizia 
+            dall'indice salvato in indexOfUna e continua fino alla fine della stringa stringa.
+
+            Ad esempio, se stringa fosse "Una volta c'era una casa in una collina", allora indexOfUna 
+            sarebbe 0, poiché la sottostringa "una" inizia nella prima posizione della stringa. 
+            Quindi, il codice stamperebbe la sottostringa "Una volta c'era una casa in una collina" 
+            perché slice() è stato utilizzato per estrarre la sottostringa 
+            dalla posizione 0 fino alla fine della stringa.
+        */
+
+
+        console.log(stringa.toUpperCase());//Convertire la stringa in MAIUSCOLO
+        console.log(stringa.toLowerCase());//Convertire la stringa in muinuscolo
+
+
+        console.log(stringa.replace('stringa','CIAO'));//Rimpiazza la parola stringa e la rimpiazza con "CIAO"
+    </script>
+</body>
+</html>

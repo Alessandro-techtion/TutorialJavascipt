@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Stringhe</title>
+</head>
+<body>
+    <!--
+        1)Creare una stringa 
+        2)Singoli apici vs doppi apici
+        3)Fare l'escape dei caratteri in una stringa
+        4)Concatenare le stringhe 
+        5)Numeri vs Stringhe
+        6)Templates literals
+    -->
+    <script>
+        let stringa='Ciao, sono l\' Alessia ';
+
+        let stringa1="Prima parte della stringa, ";
+        let stringa2="Seconda parte della stringa";
+
+        console.log(stringa1 + stringa2);
+
+
+        /*
+            I template literals in JavaScript sono una caratteristica introdotta con ES6 (ECMAScript 6), 
+            che consente di creare stringhe multilinea e di interpolare variabili e espressioni all'interno 
+            di una stringa utilizzando il carattere backtick (`) come delimitatore.
+
+            Per creare un template literal, si utilizza il carattere backtick per delimitare la stringa, 
+            come nell'esempio seguente:
+        */
+        const nome = "Mario";
+        const messaggio = `Ciao ${nome}, benvenuto!`;
+        console.log(messaggio);
+        /*
+            In questo esempio, la variabile "messaggio" è una stringa multilinea che utilizza i template 
+            literals per interpolare la variabile "nome" all'interno della stringa, utilizzando la sintassi "${nome}".
+
+            La sintassi dei template literals consente anche di creare stringhe multilinea, senza dover 
+            utilizzare il carattere di escape per andare a capo:
+        */
+    </script>
+</body>
+</html>
