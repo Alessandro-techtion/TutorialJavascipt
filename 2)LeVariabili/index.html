@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le variabili</title>
+</head>
+<body>
+    <!--
+        1)Che cos'è una variabile
+            In informatica, una variabile è un contenitore di dati che ha un nome, un tipo di dato 
+            e un valore. Il valore della variabile può essere assegnato o modificato durante 
+            l'esecuzione del programma.
+
+            Nella maggior parte dei linguaggi di programmazione, prima di poter utilizzare una 
+            variabile, è necessario dichiararla, cioè specificare il suo nome e il tipo di dato 
+            che conterrà.
+
+        2)Dichiarare una variabile
+            let x; // dichiarazione della variabile 'x'
+
+        3)Inizializzare una variabile
+            x = 10; // assegna il valore 10 alla variabile 'x'
+
+        4)Differenza tra var e let
+            In JavaScript, let e var sono entrambi utilizzati per dichiarare variabili, 
+            ma ci sono alcune differenze importanti tra i due.
+
+            La principale differenza tra let e var riguarda la loro "portata" o "scope". 
+            La portata di una variabile determina la parte del codice in cui la variabile è accessibile.
+
+            Le variabili dichiarate con var hanno una portata "funzionale" o "globale". 
+            Ciò significa che sono accessibili ovunque all'interno della funzione in cui sono 
+            state dichiarate o a livello globale, al di fuori di tutte le funzioni. 
+            
+            Le variabili dichiarate con let, d'altra parte, hanno una portata "a blocco" o "locale". 
+            Ciò significa che sono accessibili solo all'interno del blocco di codice in cui sono state 
+            dichiarate, ad esempio all'interno di una funzione, un ciclo o un blocco di istruzioni 
+            condizionali. 
+
+        5)Aggiornare le variabili
+
+        6)Tipi di variabili: numeri, stringhe, boolean, array*, oggetti*
+            Variabili di tipo stringa: memorizzano testo tra apici singoli o doppi (ad esempio, "hello world" o '123'). 
+            Le stringhe possono essere concatenate usando l'operatore "+".
+
+            Variabili di tipo numerico: memorizzano numeri interi o decimali (ad esempio, 123 o 3.14). 
+            Puoi eseguire operazioni matematiche su queste variabili, come l'addizione, la sottrazione, 
+            la moltiplicazione e la divisione.
+
+            Variabili di tipo booleano: possono essere solo "true" o "false". Queste variabili sono spesso
+             utilizzate come flag per indicare se una determinata condizione è vera o falsa.
+
+            Variabili di tipo array: memorizzano una serie di valori in una sola variabile. Gli elementi 
+            dell'array possono essere di qualsiasi tipo (ad esempio, stringhe, numeri, booleani, altri array, ecc.).
+
+            Variabili di tipo oggetto: memorizzano un insieme di proprietà e metodi in una sola variabile.
+
+        7)Tipizzazzione dinamica
+            La tipizzazione dinamica in JavaScript si riferisce al fatto che le variabili in JavaScript 
+            non sono associate a un tipo di dati specifico durante la dichiarazione, ma il loro tipo 
+            può essere modificato in qualsiasi momento durante l'esecuzione del programma.
+
+            In altre parole, una variabile può contenere un valore di un certo tipo di dati in un 
+            momento e poi può essere assegnata ad un valore di un altro tipo di dati in un altro 
+            momento senza che ci sia bisogno di specificare il tipo di dati durante la dichiarazione.
+
+
+            Questa flessibilità può essere utile in alcune situazioni, ma può anche portare ad errori 
+            difficili da individuare se non si presta attenzione al tipo di dati che si sta utilizzando 
+            in una determinata variabile.
+
+            Per evitare problemi di questo tipo, è possibile utilizzare tecniche come il controllo dei tipi 
+            durante l'esecuzione del programma o l'uso di strumenti di analisi statica del codice come TypeScript, 
+            che fornisce un sistema di tipizzazione statica opzionale per JavaScript.
+
+        8)Costanti in Javascript
+            In JavaScript, le costanti sono dichiarate utilizzando la parola chiave const. 
+            Una volta che una costante è stata assegnata con un valore, il suo valore non può essere 
+            modificato durante l'esecuzione del programma.
+
+            Ecco un esempio di come dichiarare una costante in JavaScript:
+            const PI = 3.141592653589793;
+
+-->
+
+    <script>
+        let nome='Alessandro';
+        let numero1=20;
+        let numero2=10;
+        let sommaDeiDueNumeri=numero1+numero2;
+        
+        console.log(sommaDeiDueNumeri);
+    </script>
+</body>
+</html>
