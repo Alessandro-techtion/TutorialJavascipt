@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduzione a Javascript</title>
+    <style>
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: justify;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!--
+        1)Cos'è Javascript?
+            JavaScript è un linguaggio di programmazione interpretato ad alto livello, utilizzato principalmente 
+            per aggiungere interattività agli elementi di una pagina web. JavaScript è supportato da tutti i browser 
+            web moderni ed è ampiamente utilizzato per la creazione di applicazioni web, giochi, 
+            animazioni e molto altro ancora. È un linguaggio di scripting flessibile e dinamico che può 
+            essere utilizzato per la manipolazione degli elementi HTML e CSS, la gestione degli eventi, 
+            l'interazione con i server e molte altre funzionalità avanzate. JavaScript è stato sviluppato da 
+            Brendan Eich presso Netscape nel 1995 ed è ora uno dei linguaggi di programmazione più utilizzati al mondo.
+
+        2)Cosa può fare javascript? variabili, operazioni, eventi e molto altro. API
+            Manipolare il contenuto HTML e CSS di una pagina web: JavaScript può essere utilizzato per 
+            modificare il contenuto di una pagina web in tempo reale, aggiungendo, rimuovendo o modificando 
+            gli elementi HTML e CSS.
+
+            Gestire gli eventi: JavaScript può essere utilizzato per catturare e gestire gli eventi degli 
+            utenti, come clic, hover, scroll e molto altro ancora.
+
+            Creare animazioni e effetti visivi: JavaScript può essere utilizzato per creare animazioni, 
+            transizioni e altri effetti visivi, migliorando l'esperienza utente su una pagina web.
+
+            Comunicare con i server: JavaScript può essere utilizzato per inviare e ricevere dati dai server, 
+            consentendo la creazione di applicazioni web dinamiche.
+
+            Creare giochi: JavaScript può essere utilizzato per creare giochi, sia semplici che complessi, per il web.
+
+            Aggiungere funzionalità avanzate: JavaScript può essere utilizzato per creare funzionalità 
+            avanzate, come la geolocalizzazione, la riconoscimento vocale e molto altro ancora.
+
+            In sostanza, JavaScript può essere utilizzato per creare qualsiasi cosa da un'applicazione web 
+            semplice a una più complessa, interattiva e dinamica.
+
+        3)Cosa fa js sulla nostra pagina?
+            Aggiornare e modificare il contenuto della pagina in tempo reale: JavaScript può essere 
+            utilizzato per modificare il contenuto della pagina, come testo, immagini, stili CSS e altri 
+            elementi HTML, senza dover ricaricare la pagina.
+
+            Gestire gli eventi dell'utente: JavaScript può essere utilizzato per catturare e gestire gli eventi 
+            dell'utente, come clic sui pulsanti, input di testo, movimenti del mouse, ecc.
+
+            Creare animazioni e effetti visivi: JavaScript può essere utilizzato per creare animazioni 
+            e effetti visivi, come transizioni di pagina, effetti di dissolvenza, scorrimento delle immagini, ecc.
+
+            Effettuare validazioni di input: JavaScript può essere utilizzato per validare l'input dell'utente 
+            sui moduli della pagina web, come il controllo della validità dell'email o l'obbligo di compilazione di un campo.
+
+            Comunicare con i server: JavaScript può essere utilizzato per inviare richieste ai server e 
+            ricevere dati, permettendo di creare applicazioni web dinamiche e interattive.
+
+            Creare giochi: JavaScript può essere utilizzato per creare giochi interattivi 
+            direttamente sulla pagina web.
+
+            In sostanza, JavaScript permette di creare pagine web più interattive, reattive e personalizzate, 
+            migliorando l'esperienza dell'utente sulla pagina stessa. 
+
+        4)Broswer security, ogni codice è eseguito sulla sua tab
+
+        5)Ordine di lettua dall'alto verso il basso
+
+        6)Codice interpretato vs codice compilato, js è interpretato subito dal browser, java,c# compilati.
+            Il codice compilato e il codice interpretato sono due approcci differenti per eseguire 
+            codice scritto in un linguaggio di programmazione. Le principali differenze tra il codice 
+            compilato e quello interpretato sono:
+
+            Processo di esecuzione: Il codice compilato deve essere prima tradotto in codice macchina dal compilatore, 
+            mentre il codice interpretato viene tradotto e eseguito "on-the-fly" da un interprete.
+
+            Prestazioni: Il codice compilato solitamente ha prestazioni migliori rispetto al codice interpretato, 
+            perché il compilatore può ottimizzare il codice e creare un eseguibile ottimizzato per il 
+            sistema su cui viene eseguito.
+
+            Portabilità: Il codice interpretato è generalmente più portabile rispetto al codice compilato, in 
+            quanto l'interprete può eseguire il codice su qualsiasi sistema in cui sia disponibile.
+
+            Debugging: Il debugging del codice interpretato può essere più semplice, perché l'interprete può 
+            fornire messaggi di errore dettagliati e visualizzare il valore delle variabili in tempo reale.
+
+            Complessità: Il codice compilato è generalmente più complesso da scrivere rispetto al codice 
+            interpretato, perché richiede la gestione della compilazione e della distribuzione dell'eseguibile.
+
+            In generale, il codice compilato è più adatto per le applicazioni che richiedono elevate prestazioni, 
+            mentre il codice interpretato è più adatto per le applicazioni che richiedono portabilità e flessibilità. 
+            Tuttavia, molti linguaggi di programmazione moderni combinano entrambi gli approcci, consentendo di ottenere 
+            il meglio di entrambi i mondi.
+
+        7)Differenze tra client side e server side
+            Il client-side e il server-side sono due approcci differenti per la gestione dell'elaborazione 
+            e dell'interazione tra una applicazione web e l'utente finale. Le principali differenze tra 
+            client-side e server-side sono:
+
+            Elaborazione: Nel client-side, l'elaborazione del codice viene eseguita sul browser dell'utente, 
+            mentre nel server-side l'elaborazione viene eseguita sul server.
+
+            Risorse: Nel client-side, le risorse sono gestite dal browser dell'utente, mentre nel server-side 
+            le risorse sono gestite dal server.
+
+            Sicurezza: Nel client-side, il codice può essere facilmente manipolato o visualizzato dall'utente finale, 
+            rendendo la sicurezza un problema cruciale. Nel server-side, invece, la sicurezza è gestita principalmente 
+            dal server.
+
+            Velocità: Il client-side può essere più veloce per l'utente finale, in quanto il codice viene eseguito 
+            immediatamente sul browser dell'utente senza dover attendere il caricamento del server. Nel server-side, 
+            invece, l'elaborazione può richiedere del tempo a seconda della complessità dell'applicazione e 
+            del carico del server.
+
+            Capacità di elaborazione: Il server-side può gestire grandi quantità di dati e di traffico web in modo 
+            efficiente, mentre il client-side è più limitato a causa delle risorse limitate dei browser.
+
+            In generale, il client-side è utilizzato per fornire un'esperienza utente più interattiva e reattiva, 
+            mentre il server-side è utilizzato per gestire l'elaborazione dei dati e del traffico web in modo 
+            più efficiente e sicuro. Tuttavia, molti sviluppatori web utilizzano entrambi gli approcci 
+            per sfruttare le risorse e le potenzialità di entrambi.
+
+            8)Come aggiungere js alla pagina, inline, esterno
+
+            9)Strategie di caricamento codice DOMContentLoaded, async(indipendente), defer (in ordine)
+    -->
+
+    <p>Player 1: Default</p>
+
+    <script>
+        const paragraph=document.querySelector('p');
+
+        paragraph.addEventListener('click',updateName);
+
+        function updateName(){
+            let name=prompt('Inserisci un nuovo nome');
+
+            paragraph.textContent='Player 1: ' + name;
+        }
+
+        /*
+            l codice HTML mostra un semplice paragrafo che dice "Player 1: Default".
+
+            Il codice JavaScript utilizza il metodo querySelector per selezionare il primo 
+            elemento p all'interno del documento HTML. La costante paragraph contiene quindi 
+            un riferimento a questo elemento.
+
+            Successivamente, il codice utilizza il metodo addEventListener per associare al paragrafo 
+            paragraph un evento di click, che attiva la funzione updateName ogni volta che l'utente 
+            clicca sul paragrafo. È importante notare che non si utilizza la notazione delle parentesi 
+            quando si passa la funzione come parametro per l'evento di click. Infatti, updateName() 
+            verrebbe eseguito immediatamente, mentre si vuole che la funzione venga eseguita solo al click.
+
+            La funzione updateName richiede all'utente di inserire un nuovo nome tramite la 
+            funzione prompt, e quindi sostituisce il testo del paragrafo con il nuovo nome inserito. 
+            Il testo del paragrafo viene modificato tramite la proprietà textContent.
+
+            In sintesi, quando l'utente clicca sul paragrafo, viene chiamata la funzione updateName, 
+            che richiede all'utente un nuovo nome e lo mostra nel paragrafo. Questo codice rappresenta 
+            un esempio molto semplice di interazione tra utente e pagina web tramite JavaScript.
+        */
+    </script>
+</body>
+</html>
