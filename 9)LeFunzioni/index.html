@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le funzioni</title>
+</head>
+<body>
+    <!--
+        1)Blocchi di codice riutilizzabili
+            In JavaScript, le funzioni sono un tipo di oggetto che consente di eseguire una 
+            serie di istruzioni. Le funzioni possono essere definite utilizzando la keyword function e possono 
+            avere uno o più parametri. 
+            Ecco un esempio di una funzione semplice che accetta due numeri e restituisce la loro somma:
+
+            function somma(a, b) {
+                return a + b;
+            }
+            Le funzioni possono anche essere usate come callback per gestire eventi, come ad esempio in 
+            un'interfaccia utente interattiva o per richieste asincrone. In generale, le funzioni in JavaScript sono 
+            estremamente versatili e sono uno dei concetti fondamentali della programmazione in questo linguaggio.
+
+        2)Funzioni del browser string.replace,array.join, math.random 
+        3)Funzioni e metodi 
+            In programmazione, sia le funzioni che i metodi sono dei blocchi di codice che eseguono 
+            un'azione specifica. Tuttavia, la principale differenza tra funzioni e metodi è che le funzioni sono definite 
+            come blocchi di codice indipendenti, mentre i metodi sono definiti all'interno di una classe o di un oggetto.
+
+            Le funzioni sono, quindi, considerate come costrutti di programmazione indipendenti e possono essere richiamate e 
+            utilizzate in qualsiasi parte del codice, indipendentemente dalla classe o dall'oggetto in cui sono definite. 
+            In JavaScript, le funzioni possono essere definite come funzioni globali o come metodi di un oggetto.
+
+            I metodi, invece, sono funzioni definite all'interno di una classe o di un oggetto e possono accedere ai dati e 
+            alle proprietà dell'oggetto stesso. I metodi sono quindi legati all'oggetto e sono utilizzati per manipolare 
+            i dati contenuti in esso o per eseguire operazioni specifiche sull'oggetto stesso. In altre parole, 
+            i metodi sono funzioni che appartengono a un oggetto specifico e possono essere richiamati solo da quel particolare oggetto.
+
+            In sintesi, la differenza principale tra funzioni e metodi è che le funzioni 
+            sono blocchi di codice indipendenti, mentre i metodi sono funzioni definite all'interno di una 
+            classe o di un oggetto. Le funzioni possono essere utilizzate ovunque nel codice, mentre 
+            i metodi sono specifici per l'oggetto che li contiene e possono accedere ai dati e alle proprietà dell'oggetto stesso.
+
+        4)Invocare una funzione
+            nomeFunzione()
+
+        5)Funzioni anonime
+            Le funzioni anonime sono funzioni che non hanno un nome per essere richiamate
+
+        6)Scope e conflitti (scope globale e scope locale)
+            In JavaScript, lo scope si riferisce alla visibilità delle variabili all'interno del codice. 
+            Lo scope determina dove una variabile è accessibile e dove non lo è. In particolare, 
+            lo scope delle funzioni si riferisce alla visibilità delle variabili all'interno di una funzione.
+
+            In JavaScript, le variabili dichiarate all'interno di una funzione hanno uno scope locale e non 
+            sono accessibili all'esterno della funzione stessa. Viceversa, le variabili dichiarate 
+            fuori dalla funzione hanno uno scope globale e sono accessibili da qualsiasi parte del codice.
+
+            
+            Ecco un esempio che illustra lo scope delle funzioni:
+
+            var nome = "Mario"; // variabile globale
+
+            function saluta() {
+                var cognome = "Rossi"; // variabile locale
+                console.log("Ciao " + nome + " " + cognome);
+            }
+
+            saluta(); // Output: Ciao Mario Rossi
+            console.log(cognome); // Uncaught ReferenceError: cognome is not defined
+
+
+            In questo esempio, la variabile nome è una variabile globale e può essere acceduta sia all'interno 
+            che all'esterno della funzione saluta(). La variabile cognome, invece, è una variabile locale e può essere 
+            acceduta solo all'interno della funzione stessa. Se si cerca di accedere alla variabile cognome dall'esterno 
+            della funzione, verrà generato un errore di riferimento.
+
+            In sintesi, lo scope delle funzioni in JavaScript si riferisce alla visibilità delle variabili
+            all'interno di una funzione. Le variabili dichiarate all'interno di una funzione hanno uno scope 
+            locale e non sono accessibili all'esterno della funzione stessa, mentre le variabili dichiarate 
+            fuori dalla funzione hanno uno scope globale e sono accessibili da qualsiasi parte del codice.
+
+        7)innestare le funzioni
+    -->
+    <button>Salutami!</button>
+    
+    <script>
+        //Funzione normale
+        function conta(){
+            console.log("Richiamata la funzione conta");
+        }
+        conta();
+        
+        
+        let nome='Luca';
+        nome.replace('Luca','Francesco');
+        
+        /*
+            In JavaScript, le funzioni anonime sono funzioni senza nome che vengono definite direttamente 
+            all'interno di un'espressione e possono essere assegnate a variabili o passate come parametri ad altre funzioni.
+
+            Per definire una funzione anonima, si utilizza la keyword function seguita dai parametri della funzione, 
+            il corpo della funzione e l'eventuale valore di ritorno, come mostrato nell'esempio seguente:
+        */
+        const myButton=document.querySelector('button');
+        myButton.onclick=function(){
+            alert('Hello');
+        }
+
+
+        //Parametri delle funzioni
+        /*
+            Le funzioni in JavaScript possono accettare parametri, ovvero valori che vengono passati alla funzione al 
+            momento della chiamata e che possono essere utilizzati all'interno del corpo della funzione.
+
+            Per definire una funzione con parametri in JavaScript, si inseriscono i nomi dei parametri all'interno 
+            delle parentesi tonde che seguono il nome della funzione, come mostrato nell'esempio seguente:
+        
+        */
+        function somma(a, b) {
+            return a + b;
+        }
+        /*
+            In questo esempio, la funzione somma accetta due parametri, a e b. 
+            All'interno del corpo della funzione, questi parametri possono essere utilizzati come qualsiasi altra variabile:
+        */
+        var risultato = somma(3, 5);
+        console.log(risultato); // Output: 8
+        /*
+            In questo caso, la funzione somma viene chiamata passando i valori 3 e 5 come parametri. 
+            All'interno del corpo della funzione, questi valori vengono assegnati alle variabili a e b, e 
+            la funzione restituisce la somma dei due valori.
+        */
+
+
+
+        /*Innestare le funzioni*/
+        function generaTabella(){
+            generaFooter();
+            generaRighe();
+            generaHeader();
+            console.log('Tabella generata');
+        }
+
+       function generaFooter(){
+            console.log('Footer generato');
+        }
+       function generaRighe(){
+            console.log('Righe generate');
+        }
+        function generaHeader(){
+            console.log('Header generato');
+        }
+
+        generaTabella();
+    </script>
+</body>
+</html>
